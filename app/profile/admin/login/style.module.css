@@ -1,0 +1,49 @@
+.adminLogin {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7AC943;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logoIcon {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #333;
+}
+
+.logo p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    color: #7AC943;
+    font-weight: 500;
+}
+
+.form {
+    width: 100%;
+}

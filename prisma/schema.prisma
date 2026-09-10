@@ -1,0 +1,100 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id            Int       @id @default(autoincrement())
+  name          String    @unique
+  nameAm        String?   @default("")
+  description   String?
+  descriptionAm String?   @default("")
+  image         String?
+  createdAt     DateTime  @default(now())
+  products      Product[]
+}
+
+model Product {
+  id             Int      @id @default(autoincrement())
+  name           String
+  nameAm         String?  @default("")
+  description    String?
+  descriptionAm  String?  @default("")
+  price          Int
+  image          String
+  categoryId     Int
+  quantity       Int      @default(0)
+  isPopular      Boolean  @default(false)
+  isNew          Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  isOnOrder      Boolean  @default(false)
+  unit           String?  @default("kg")
+  category       Category @relation(fields: [categoryId], references: [id])
+}
+
+model User {
+  id                  Int       @id @default(autoincrement())
+  email               String    @unique
+  password            String
+  name                String?
+  lastName            String?
+  phone               String    @unique(map: "unique_phone")
+  role                String    @default("user")
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+  isActive            Boolean   @default(true)
+  canManageCategories Boolean   @default(false)
+  canManageCustomers  Boolean   @default(false)
+  canManageManagers   Boolean   @default(false)
+  canManageOrders     Boolean   @default(false)
+  canManageProducts   Boolean   @default(false)
+  canViewCategories   Boolean   @default(false)
+  canViewCustomers    Boolean   @default(false)
+  canViewDashboard    Boolean   @default(false)
+  canViewManagers     Boolean   @default(false)
+  canViewOrders       Boolean   @default(false)
+  canViewProducts     Boolean   @default(false)
+  orders              Order[]
+  sessions            Session[]
+  logs                Log[]     // ← ДОБАВИТЬ
+}
+
+model Order {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  total     Int
+  status    String   @default("new")
+  items     Json
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Session {
+  id          String   @id
+  userId      Int
+  signature   String
+  fingerprint String
+  expiresAt   DateTime
+  createdAt   DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+// Новая модель для логирования
+model Log {
+  id        Int      @id @default(autoincrement())
+  userId    Int?     // кто сделал (null = неавторизованный)
+  action    String   // admin_login, update_product, delete_user и т.д.
+  details   Json?    // детали в JSON
+  ip        String?  // IP адрес
+  createdAt DateTime @default(now())
+  
+  user      User?    @relation(fields: [userId], references: [id])
+}

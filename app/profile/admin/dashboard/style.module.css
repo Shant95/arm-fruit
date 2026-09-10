@@ -1,0 +1,578 @@
+.dashboardPage {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5f7fa;
+}
+
+.head {
+    position: fixed;
+    top: 0;
+    left: 260px;
+    right: 0;
+    padding: 10px 20px;
+    height: 100px;
+    background-color: white;
+    border-bottom: 1px solid silver;
+    box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.2);
+    z-index: 101;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 96%;
+    min-height: 700px;
+    margin-top: 130px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: transparent;
+    gap: 25px;
+}
+
+/* Период */
+.periodSelector {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    width: 100%;
+}
+
+.periodLabel {
+    font-size: 14px;
+    color: #666;
+}
+
+.categoryWrapper {
+    position: relative;
+    width: 180px;
+}
+
+.categoryInput {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    background-color: white;
+    border: 1px solid silver;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.categoryInput:hover {
+    border-color: #7AC943;
+}
+
+.arrow {
+    font-size: 12px;
+    color: #666;
+}
+
+.categoryDropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid silver;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    overflow: hidden;
+    animation: dropdownFade 0.2s ease;
+}
+
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.categoryItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.categoryItem:last-child {
+    border-bottom: none;
+}
+
+.categoryItem:hover {
+    background-color: #f8f9fa;
+}
+
+.activeCategory {
+    background-color: rgba(122, 201, 67, 0.1);
+    color: #7AC943;
+}
+
+.checkmark {
+    font-weight: bold;
+    font-size: 16px;
+    color: #7AC943;
+}
+
+/* Статистика */
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.statCard {
+    position: relative;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid silver;
+    border-radius: 1rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+}
+
+.statCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.statIcon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.statValue {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+.statLabel {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #666;
+}
+
+.statTrend {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 12px;
+    color: #4caf50;
+    font-weight: 500;
+}
+
+/* График продаж */
+.chartSection {
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid silver;
+    border-radius: 1rem;
+}
+
+.sectionTitle {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.chartContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 250px;
+    gap: 10px;
+}
+
+.chartBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+}
+
+.barLabel {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.barFill {
+    position: relative;
+    width: 100%;
+    background-color: #7AC943;
+    border-radius: 8px 8px 0 0;
+    transition: height 0.3s ease;
+    cursor: pointer;
+    min-height: 20px;
+}
+
+.barFill:hover {
+    background-color: #5fa335;
+}
+
+.barFill:hover .barValue {
+    opacity: 1;
+}
+
+.barValue {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 5px;
+    padding: 4px 8px;
+    background-color: #333;
+    border-radius: 4px;
+    font-size: 10px;
+    color: white;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+
+/* Статусы заказов */
+.statusSection {
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid silver;
+    border-radius: 1rem;
+}
+
+.statusGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+}
+
+.statusCard {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 1rem;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.statusCard:hover {
+    transform: translateY(-2px);
+}
+
+.statusIcon {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.statusCount {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.statusLabel {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Две колонки */
+.twoColumns {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+}
+
+.recentOrders,
+.topProducts {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid silver;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.columnHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.viewAllBtn {
+    padding: 6px 12px;
+    background: none;
+    border: 1px solid #7AC943;
+    border-radius: 1rem;
+    font-size: 12px;
+    cursor: pointer;
+    color: #7AC943;
+    transition: all 0.2s;
+}
+
+.viewAllBtn:hover {
+    background-color: #7AC943;
+    color: white;
+}
+
+/* Таблица заказов */
+.tableWrapper {
+    overflow-x: auto;
+}
+
+.ordersTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.ordersTable th {
+    padding: 12px 8px;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+    border-bottom: 1px solid #eee;
+}
+
+.ordersTable td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.ordersTable tr:hover {
+    background-color: #f8f9fa;
+}
+
+.orderId {
+    font-weight: 600;
+    color: #7AC943;
+}
+
+.orderTotal {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Бейджи статусов */
+.statusBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.statusNew {
+    background-color: rgba(33, 150, 243, 0.1);
+    color: #2196f3;
+}
+
+.statusProcessing {
+    background-color: rgba(255, 152, 0, 0.1);
+    color: #ff9800;
+}
+
+.statusShipping {
+    background-color: rgba(156, 39, 176, 0.1);
+    color: #9c27b0;
+}
+
+.statusDelivered {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #4caf50;
+}
+
+.statusCompleted {
+    background-color: rgba(122, 201, 67, 0.1);
+    color: #7AC943;
+}
+
+.statusCancelled {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #f44336;
+}
+
+/* Топ товары */
+.productsList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.productItem {
+    position: relative;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border-radius: 0.75rem;
+    transition: all 0.2s;
+    overflow: hidden;
+}
+
+.productItem:hover {
+    background-color: #f0f2f5;
+}
+
+.productRank {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ddd;
+}
+
+.productInfo {
+    position: relative;
+    z-index: 1;
+}
+
+.productName {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.productStats {
+    display: flex;
+    gap: 15px;
+    font-size: 12px;
+    color: #666;
+}
+
+.productBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(122, 201, 67, 0.1);
+    border-radius: 0.75rem;
+    transition: width 0.3s ease;
+    pointer-events: none;
+}
+
+/* Быстрые действия */
+.quickActions {
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid silver;
+    border-radius: 1rem;
+}
+
+.actionsGrid {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.actionBtn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background-color: #f8f9fa;
+    border: 1px solid silver;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.actionBtn:hover {
+    background-color: #7AC943;
+    border-color: #7AC943;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.actionIcon {
+    font-size: 20px;
+}
+
+/* Адаптив */
+@media (max-width: 1024px) {
+    .twoColumns {
+        flex-direction: column;
+    }
+    
+    .statsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+    
+    .statusGrid {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 98%;
+        margin-top: 120px;
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .statsGrid {
+        gap: 10px;
+    }
+    
+    .statValue {
+        font-size: 20px;
+    }
+    
+    .statIcon {
+        font-size: 24px;
+    }
+    
+    .chartContainer {
+        height: 200px;
+    }
+    
+    .barValue {
+        font-size: 8px;
+    }
+    
+    .statusGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .actionsGrid {
+        justify-content: center;
+    }
+    
+    .actionBtn {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+    
+    .categoryWrapper {
+        width: 140px;
+    }
+    
+    .periodSelector {
+        justify-content: center;
+    }
+}

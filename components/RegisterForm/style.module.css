@@ -1,0 +1,266 @@
+.registerForm {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.64);
+    padding: 20px 0;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 90%;
+    min-height: 300px;
+    gap: 15px;
+}
+
+.bloks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 83px;
+    gap: 10px;
+}
+
+@media (max-width: 549px) {
+    .bloks:nth-of-type(1) {
+        flex-direction: column;
+        min-height: 160px;
+    }
+}
+@media (max-width: 549px) {
+    .bloks:nth-of-type(1) .blok {
+      width: 100%;
+    }
+}
+@media (max-width: 498px) {
+    .bloks:nth-of-type(2)  {
+      width: 100%;
+      height: 175px;
+      flex-direction: column;
+      
+    }
+}
+
+@media (max-width: 498px) {
+    .bloks:nth-of-type(3)  {
+      width: 100%;
+      height: 175px;
+      flex-direction: column;
+      
+    }
+}
+
+.blok {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    height: 83px;
+}
+
+.blok label {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.blok input {
+    width: 100%;
+    height: 55px;
+    border: 1px solid silver;
+    border-radius: 1rem;
+    padding-left: 12px;
+    outline: none;
+    background-color: rgb(241, 241, 241);
+    font-size: 16px;
+}
+
+.blok input:hover {
+    border: 1px solid #7AC943;
+}
+
+.blok input:focus {
+    border: 2px solid #7AC943;
+}
+
+.conditions{
+    width: 90%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 549px) {
+    .conditions{
+flex-direction: row;
+font-size: 12px;
+    }
+}
+
+@media (max-width: 467px) {
+    .conditions{
+flex-direction: row;
+font-size: 10px;
+    }
+}
+@media (max-width: 386px) {
+    .conditions{
+font-size: 9px;
+    }
+}
+
+.conditions input{
+    margin-right: 10px;
+    width: 19px;
+    height: 19px;
+}
+
+@media (max-width: 549px) {
+    .conditions input{
+margin-right: 3px;
+    }
+}
+
+.conditions p{
+    font-size: 14px;
+    color: #333;
+}
+
+@media (max-width: 534px) {
+    .conditions p{
+font-size: 12px;
+    }
+}
+
+
+@media (max-width: 467px) {
+    .conditions p{
+font-size: 10px;
+    }
+}
+
+@media (max-width: 386px) {
+    .conditions p{
+font-size: 9px;
+    }
+}
+
+.conditionsbt{
+margin-left: 4px;
+margin-right: 4px;
+color: #7AC943;
+}
+
+.cloudFlare{
+    margin-top: 17px;
+    width: 50%;
+    height: 80px;
+    border: 1px solid silver;
+}
+
+.create{
+    width: 90%;
+    height: 55px;
+    border-radius: 1rem;
+    border: 1px solid #7AC943;
+    background-color: #7AC943;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.create:hover{
+    background-color: #4d8d20;
+}
+
+.have{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    width: 90%;
+    height: 55px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+    border-radius: 1rem;
+    border: 1px solid silver;
+    padding-left: 10px;
+    background-color: rgb(241, 241, 241);
+    color: #333;
+}
+
+.loginpage{
+    color: #7AC943;
+}
+
+/* Контейнер для поля пароля с глазком */
+.passwordWrapper {
+    position: relative;
+    width: 100%;
+    height: 55px;
+}
+
+.passwordWrapper input {
+    width: 100%;
+    height: 100%;
+    border: 1px solid silver;
+    border-radius: 1rem;
+    padding-left: 12px;
+    padding-right: 42px;
+    outline: none;
+    background-color: rgb(241, 241, 241);
+    font-size: 16px;
+}
+
+.passwordWrapper input:hover {
+    border: 1px solid #7AC943;
+}
+
+.passwordWrapper input:focus {
+    border: 2px solid #7AC943;
+}
+
+/* Кнопка-глаз */
+.eyeButton {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    transition: color 0.2s;
+}
+
+.eyeButton:hover {
+    color: #7AC943;
+}
+
+/* Убираем стандартный крестик в IE */
+.passwordWrapper input::-ms-reveal {
+    display: none;
+}
+
+/* Отключённая кнопка */
+.createDisabled {
+    background-color: #cccccc !important;
+    border-color: #cccccc !important;
+    cursor: not-allowed !important;
+    opacity: 0.6;
+}
+
+.createDisabled:hover {
+    background-color: #cccccc !important;
+    transform: none;
+}
+

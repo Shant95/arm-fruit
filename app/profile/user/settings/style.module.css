@@ -1,0 +1,167 @@
+.settingsPage {
+  margin-top: 180px;
+  width: 100%;
+  min-height: 500px;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 32px;
+  color: #333;
+}
+
+.backLink {
+  color: #7AC943;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border-radius: 1rem;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 20px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  font-size: 14px;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: #7AC943;
+}
+
+.value {
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  color: #333;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.editBtn, .saveBtn, .changePasswordBtn, .cancelBtn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.editBtn, .saveBtn {
+  background-color: #7AC943;
+  color: white;
+}
+
+.editBtn:hover, .saveBtn:hover {
+  background-color: #5fa335;
+}
+
+.changePasswordBtn {
+  background-color: #ff9800;
+  color: white;
+}
+
+.changePasswordBtn:hover {
+  background-color: #e68900;
+}
+
+.cancelBtn {
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+.cancelBtn:hover {
+  background-color: #e0e2e5;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 0.5rem;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.message.success {
+  background-color: rgba(122, 201, 67, 0.1);
+  color: #5fa335;
+  border: 1px solid #7AC943;
+}
+
+.message.error {
+  background-color: rgba(255, 71, 87, 0.1);
+  color: #ff4757;
+  border: 1px solid #ff4757;
+}
+
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 18px;
+  color: #666;
+  margin-top: 180px;
+}
+
+@media (max-width: 768px) {
+  .settingsPage {
+    margin-top: 120px;
+  }
+  
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .buttons {
+    flex-direction: column;
+  }
+  
+  .editBtn, .saveBtn, .changePasswordBtn, .cancelBtn {
+    width: 100%;
+  }
+}

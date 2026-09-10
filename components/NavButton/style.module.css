@@ -1,0 +1,22 @@
+.NavButton{
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.NavButton:hover{
+    color: red;
+}
+
+/* Адаптивность для NavButton */
+@media (max-width: 769px) {
+    .NavButton {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 571px) {
+    .NavButton {
+        font-size: 15px;
+    }
+}

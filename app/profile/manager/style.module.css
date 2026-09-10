@@ -1,0 +1,18 @@
+.managerLayout {
+ position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;  
+    background-color: #f0f2f5;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.container {
+    flex: 1;
+    margin-left: 260px;
+    padding: 20px;
+}

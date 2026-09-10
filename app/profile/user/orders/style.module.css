@@ -1,0 +1,11 @@
+.ordersPage {
+  margin-top: 180px;
+  width: 100%;
+  min-height: 500px;
+}
+
+@media (max-width: 769px) {
+    .ordersPage{
+margin-top: 2px;
+    }
+    }

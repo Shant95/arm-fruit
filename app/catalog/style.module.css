@@ -1,0 +1,264 @@
+.catalog {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 700px;
+    margin-top: 140px;
+}
+
+@media (max-width: 1170px) {
+
+    .catalog {
+        margin-top: 150px;
+    }
+}
+
+@media (max-width: 769px) {
+
+    .catalog {
+        margin-top: 100px;
+    }
+}
+
+.catalog>h1 {
+    width: 60%;
+    height: 80px;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.searchInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0f2f5;
+    padding: 12px 20px;
+    border-radius: 1rem;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.searchInfo p {
+    margin: 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.searchInfo strong {
+    color: #7AC943;
+}
+
+.clearSearchBtn {
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.clearSearchBtn:hover {
+    background-color: #e04350;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 400px;
+}
+
+@media (max-width: 1016px) {
+
+    .container {
+
+        flex-direction: column;
+    }
+}
+
+.filter {
+    width: 27%;
+    min-height: 500px;
+    border-radius: 2rem;
+}
+
+@media (max-width: 1170px) {
+
+    .filter {
+        display: none;
+    }
+}
+
+.products {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 600px;
+    width: 68%;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.64);
+    -webkit-box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.64);
+    -moz-box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.64);
+}
+
+@media (max-width: 1170px) {
+
+    .products {
+        width: 100%;
+    }
+}
+
+.bloks {
+    width: 96%;
+    margin-top: 18px;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    padding-left: 17px;
+}
+
+.title p {
+    color: #666;
+    font-size: 18px;
+}
+
+
+.filterBtn {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    border: 1px solid silver;
+    background-color: #7AC943;
+}
+
+.filterBtn:hover {
+    background-color: #9999;
+}
+
+@media (max-width: 1170px) {
+
+    .filterBtn {
+    display: flex;
+    }
+}
+
+
+.items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    padding-left: 17px;
+    margin-top: 10px;
+    row-gap: 15px;
+    column-gap: 15px;
+    width: 100%;
+    height: 450px;
+    overflow-y: scroll;
+}
+
+.noProducts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    padding: 40px;
+}
+
+.noProducts p {
+    font-size: 18px;
+    color: #999;
+}
+
+.clearFiltersBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #7AC943;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.clearFiltersBtn:hover {
+    background-color: #5fa335;
+}
+
+/* Стили для скролла */
+.items::-webkit-scrollbar {
+    width: 6px;
+}
+
+.items::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.items::-webkit-scrollbar-thumb {
+    background: #7AC943;
+    border-radius: 10px;
+}
+
+.items::-webkit-scrollbar-thumb:hover {
+    background: #5fa335;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 0;
+}
+
+.pageBtn {
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.pageBtn:hover:not(:disabled) {
+    background-color: #f0f2f5;
+    border-color: #7AC943;
+}
+
+.pageBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.activePage {
+    background-color: #7AC943;
+    border-color: #7AC943;
+    color: white;
+}
+
+.activePage:hover {
+    background-color: #5fa335;
+}

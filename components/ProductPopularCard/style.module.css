@@ -1,0 +1,169 @@
+.card {
+    position: relative;
+    width: 250px;
+    height: 370px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.64);
+    transition: all 0.2s linear;
+    border: 1px solid #7AC943;
+}
+
+.card:hover {
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    margin: 0 0 8px 0;
+    text-align: left;
+}
+
+.onOrderBadge {
+    background-color: #ff9800;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 1rem;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #7AC943;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.priceOnOrder {
+    font-size: 15px;
+    font-weight: bold;
+    color: #ff9800;
+    margin: 0;
+    text-align: left;
+}
+
+.button {
+    width: 90%;
+    height: 50px;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bolder;
+    background-color: #7AC943;
+    color: white;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #5fa335;
+}
+
+.typePopular {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #7AC943;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.typeNew {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff9800;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.emojiImage {
+    font-size: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Контроллер количества (когда товар уже в корзине) */
+.quantityControl {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    height: 50px;
+    background-color: #f0f2f5;
+    border-radius: 2rem;
+    padding: 0 5px;
+}
+
+.quantityBtn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    color: #7AC943;
+}
+
+.quantityBtn:hover {
+    background-color: #7AC943;
+    color: white;
+}
+
+.quantityValue {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    min-width: 50px;
+    text-align: center;
+}

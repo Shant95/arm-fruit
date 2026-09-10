@@ -1,0 +1,114 @@
+.login {
+    margin-top: 200px;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 769px) {
+    .login{
+        margin-top: 120px;
+    }
+}
+
+.title {
+    width: 33%;
+    min-height: 80px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1092px) {
+    .title {
+        width: 50%;
+    }
+}
+
+@media (max-width: 769px) {
+    .title {
+        width: 65%;
+    }
+}
+
+@media (max-width: 548px) {
+    .title {
+        width: 80%;
+    }
+}
+
+@media (max-width: 457px) {
+    .title {
+        width: 100%;
+    }
+}
+
+
+.title>h2 {
+    font-weight: bolder;
+    font-size: 27px;
+}
+
+.title>p {
+    color: rgb(192, 192, 192)
+}
+
+.form {
+    width: 33%;
+    min-height: 400px;
+}
+
+@media (max-width: 1092px) {
+    .form {
+        width: 50%;
+    }
+}
+
+@media (max-width: 769px) {
+    .form {
+        width: 65%;
+    }
+}
+
+@media (max-width: 457px) {
+    .form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 457px) {
+    .subtitle {
+        width: 100%;
+    }
+}
+
+.subtitle {
+    width: 33%;
+    font-size: 13px;
+    margin-top: 20px;
+    color: silver;
+}
+
+@media (max-width: 1092px) {
+    .subtitle {
+        width: 50%;
+    }
+}
+
+@media (max-width: 769px) {
+    .subtitle {
+        width: 65%;
+    }
+}
+
+@media (max-width: 548px) {
+    .subtitle {
+        width: 80%;
+    }
+}
+
+@media (max-width: 457px) {
+    .subtitle {
+        width: 100%;
+    }
+}

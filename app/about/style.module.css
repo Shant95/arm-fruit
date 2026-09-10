@@ -1,0 +1,140 @@
+.about {
+    width: 100%;
+    min-height: 600px;
+    margin-top: 200px;
+    border: 1px solid #7AC943;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.64);
+    -webkit-box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.64);
+    -moz-box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.64);
+}
+
+@media (max-width: 769px) {
+    .about {
+        margin-top: 120px;
+    }
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: #7AC943;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    padding-left: 25px;
+}
+
+.title>h1 {
+    font-size: 37px;
+    color: white;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    min-height: 500px;
+}
+
+@media (max-width: 1102px) {
+    .container {
+        flex-direction: column;
+
+    }
+}
+
+.image {
+    width: 400px;
+    height: 401px;
+    border: 1px solid #7AC943;
+    box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.64);
+    -webkit-box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.64);
+    -moz-box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.64);
+    border-radius: 0.5rem;
+}
+
+@media (max-width: 1002px) {
+    .image {
+        margin-top: 10px;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 446px) {
+    .image {
+        width: 300;
+        height: 300;
+    }
+}
+
+.image>img {
+    border-radius: 0.5rem;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 401px;
+    border: 1px solid #7AC943;
+    background-color: #7AC943;
+    padding-left: 5px;
+    box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.64);
+    -webkit-box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.64);
+    -moz-box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.64);
+    border-radius: 0.5rem;
+}
+
+@media (max-width: 1002px) {
+    .text {
+        width: 80%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+    }
+}
+
+@media (max-width: 647px) {
+    .text {
+        width: 92%;
+        min-height: 500px;
+    }
+}
+
+@media (max-width: 647px) {
+    .text {
+
+        min-height: 570px;
+    }
+}
+
+@media (max-width: 392px) {
+    .text {
+
+        min-height: 645px;
+    }
+}
+
+.text>h2 {
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.text>h3 {
+    font-weight: bold;
+    color: chocolate;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.text>p {
+    color: white;
+}

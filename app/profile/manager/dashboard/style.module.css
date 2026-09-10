@@ -1,0 +1,244 @@
+.dashboardPage {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.head {
+    position: fixed;
+    top: 0;
+    left: 260px;
+    right: 0;
+    padding: 10px 20px;
+    height: 100px;
+    background-color: white;
+    border-bottom: 1px solid silver;
+    box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.2);
+    z-index: 101;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 96%;
+    min-height: 700px;
+    margin-top: 130px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: transparent;
+    gap: 25px;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.statCard {
+    background: white;
+    border-radius: 1rem;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.statCard:hover {
+    transform: translateY(-3px);
+}
+
+.statIcon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.statValue {
+    font-size: 28px;
+    font-weight: bold;
+    color: #7AC943;
+}
+
+.statLabel {
+    font-size: 13px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.recentSection {
+    background: white;
+    border-radius: 1rem;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.1);
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.sectionHeader h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+.viewAllBtn {
+    background: none;
+    border: 1px solid #7AC943;
+    padding: 6px 12px;
+    border-radius: 0.5rem;
+    color: #7AC943;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.viewAllBtn:hover {
+    background-color: #7AC943;
+    color: white;
+}
+
+.tableWrapper {
+    overflow-x: auto;
+}
+
+.ordersTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.ordersTable th {
+    text-align: left;
+    padding: 12px;
+    background-color: #f8f9fa;
+    color: #555;
+    font-weight: 600;
+}
+
+.ordersTable td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.ordersTable tr:hover {
+    background-color: #f8f9fa;
+}
+
+.orderId {
+    font-weight: 600;
+    color: #7AC943;
+}
+
+.orderTotal {
+    font-weight: 600;
+}
+
+.statusBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.statusNew { background-color: rgba(33, 150, 243, 0.1); color: #2196f3; }
+.statusProcessing { background-color: rgba(255, 152, 0, 0.1); color: #ff9800; }
+.statusShipping { background-color: rgba(156, 39, 176, 0.1); color: #9c27b0; }
+.statusDelivered { background-color: rgba(76, 175, 80, 0.1); color: #4caf50; }
+.statusCompleted { background-color: rgba(122, 201, 67, 0.1); color: #7AC943; }
+.statusCancelled { background-color: rgba(244, 67, 54, 0.1); color: #f44336; }
+
+.viewBtn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.viewBtn:hover {
+    background-color: #f0f2f5;
+}
+
+.quickActions {
+    background: white;
+    border-radius: 1rem;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.1);
+}
+
+.quickActions h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.actionsGrid {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.actionBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e2e5;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.actionBtn:hover {
+    background-color: #7AC943;
+    border-color: #7AC943;
+    color: white;
+}
+
+.actionIcon {
+    font-size: 20px;
+}
+
+.loading {
+    text-align: center;
+    padding: 50px;
+    font-size: 18px;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .sectionHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .actionsGrid {
+        flex-direction: column;
+    }
+    
+    .actionBtn {
+        width: 100%;
+        justify-content: center;
+    }
+}

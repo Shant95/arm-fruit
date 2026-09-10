@@ -1,0 +1,16 @@
+.home{
+    width: 100%;
+}
+
+.container{
+    width: 100%;
+    min-height: 200px;
+    margin-top: 160px;
+}
+
+@media (max-width: 769px) {
+
+    .container{
+        margin-top: 120px;
+    }
+}

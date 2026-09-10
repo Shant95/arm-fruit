@@ -1,0 +1,201 @@
+.accountPage {
+    width: 100%;
+}
+
+.head {
+    position: fixed;
+    top: 0;
+    left: 260px;
+    right: 0;
+    padding: 10px 20px;
+    height: 100px;
+    background-color: white;
+    border-bottom: 1px solid silver;
+    box-shadow: 0px 2px 10px -2px rgba(0, 0, 0, 0.2);
+    z-index: 101;
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+    max-width: 1000px;
+    margin-top: 130px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.formCard {
+    flex: 2;
+    background: white;
+    padding: 25px;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.1);
+}
+
+.formCard h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup label {
+    display: block;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.formGroup input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 14px;
+}
+
+.formGroup input:focus {
+    outline: none;
+    border-color: #7AC943;
+}
+
+.value {
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 0.5rem;
+    color: #333;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.editBtn, .saveBtn, .cancelBtn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.editBtn, .saveBtn {
+    background-color: #7AC943;
+    color: white;
+}
+
+.editBtn:hover, .saveBtn:hover {
+    background-color: #5fa335;
+}
+
+.cancelBtn {
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.cancelBtn:hover {
+    background-color: #e0e2e5;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 0.5rem;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.message.success {
+    background-color: rgba(122, 201, 67, 0.1);
+    color: #5fa335;
+    border: 1px solid #7AC943;
+}
+
+.message.error {
+    background-color: rgba(255, 71, 87, 0.1);
+    color: #ff4757;
+    border: 1px solid #ff4757;
+}
+
+.infoCard {
+    flex: 1;
+    background: white;
+    padding: 25px;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.1);
+}
+
+.infoCard h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.infoRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.infoRow:last-child {
+    border-bottom: none;
+}
+
+.infoRow span:first-child {
+    color: #666;
+}
+
+.role {
+    color: #7AC943;
+    font-weight: 500;
+}
+
+.loading {
+    text-align: center;
+    padding: 50px;
+    font-size: 18px;
+    color: #666;
+}
+
+.changePasswordBtn {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.changePasswordBtn:hover {
+    background-color: #e68900;
+}
+
+.passwordForm {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.passwordForm h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .buttons {
+        flex-direction: column;
+    }
+    
+    .editBtn, .saveBtn, .cancelBtn {
+        width: 100%;
+    }
+}
