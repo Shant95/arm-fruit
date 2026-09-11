@@ -120,6 +120,8 @@ export default function AdminDashboard() {
 
     return (
         <div className={styles.dashboardPage}>
+
+
             <div className={styles.head}>
                 <HeaderBlokAdmin title='Обзор' subtitle='Статистика и аналитика магазина.' />
             </div>
